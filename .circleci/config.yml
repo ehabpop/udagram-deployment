@@ -43,7 +43,7 @@ jobs:
 workflows:
   basic-workflow:
     jobs:
-
+    # the created build job only triggered when the changes pushed to main branch
     steps:
       - build
       - filters:
