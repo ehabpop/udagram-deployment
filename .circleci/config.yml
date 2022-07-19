@@ -16,10 +16,6 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run:
-          name: "Checking Versions"
-          command: |
-            node --version
-      - run:
           name: Front-End Install
           command: |
             npm run frontend:install
