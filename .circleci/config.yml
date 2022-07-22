@@ -35,6 +35,7 @@ jobs:
       - run:
           name: Back-End Deploy
           command: |
+            eb init
             npm run api:deploy
 workflows:
   udagram:
