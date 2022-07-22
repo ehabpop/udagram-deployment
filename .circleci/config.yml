@@ -37,10 +37,17 @@ jobs:
           command: |
             npm run frontend:deploy
 workflows:
-  basic-workflow:
-    jobs: null
-    steps:
+  udagram:
+    jobs:
       - build
-      - filters:
-          branches:
-            only: main
+      - hold:
+          filters:
+            branches:
+              only:
+                - main
+          type: approval
+          requires:
+            - build
+      - deploy:
+          requires:
+            - hold
